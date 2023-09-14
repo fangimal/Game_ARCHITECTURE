@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using UnityEngine;
@@ -10,6 +11,9 @@ namespace CodeBase.Infrastructure.Factory
         GameObject CreateHero(GameObject at);
         void CreateHub();
         List<ISavedProgressReader> ProgressReaders { get; }
+        GameObject HeroGameObject { get; }
+
+        event Action HeroCreated;
         List<ISavedProgress> ProgressWriters { get; }
         void Cleanup();
     }
