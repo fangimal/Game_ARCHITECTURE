@@ -400,6 +400,8 @@ GameObject:
   - component: {fileID: 293632952603872937}
   - component: {fileID: 1680091536023407797}
   - component: {fileID: 6455524220641121681}
+  - component: {fileID: 5898299374830788509}
+  - component: {fileID: 2096794223746912689}
   m_Layer: 0
   m_Name: Lich
   m_TagString: Untagged
@@ -423,6 +425,7 @@ Transform:
   - {fileID: 4523268626435018}
   - {fileID: 4256255772079902}
   - {fileID: 6018343549594745860}
+  - {fileID: 7766759929711594161}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &95206231959375140
@@ -521,6 +524,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TriggerObserver: {fileID: 4828573806513594048}
   Follow: {fileID: 746950963027246574}
+  Cooldown: 0
+--- !u!114 &5898299374830788509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500939411536426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a8e69512154349a0d9c01a615c394d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 293632952603872937}
+  AttackCooldown: 3
+  Cleavage: 0.5
+  EffectiveDistance: 0.5
+--- !u!114 &2096794223746912689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500939411536426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c406b86a42e455fbc1aa3b2a94e8260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attack: {fileID: 5898299374830788509}
+  TriggerObserver: {fileID: 8273775986670776453}
 --- !u!1 &1537370055453520
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,6 +980,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4383292479776962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4822506405674180748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7766759929711594161}
+  - component: {fileID: 3430435860093344578}
+  - component: {fileID: 8273775986670776453}
+  m_Layer: 17
+  m_Name: AttackZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7766759929711594161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4822506405674180748}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4665124114459090}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3430435860093344578
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4822506405674180748}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &8273775986670776453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4822506405674180748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2de12e31b040dbbf7ed7fc802341db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8190080053124651290
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +1057,7 @@ GameObject:
   - component: {fileID: 6018343549594745860}
   - component: {fileID: 3364877837849959313}
   - component: {fileID: 4828573806513594048}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: AggroZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
