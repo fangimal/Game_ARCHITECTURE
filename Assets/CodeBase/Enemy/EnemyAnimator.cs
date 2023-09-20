@@ -42,6 +42,8 @@ namespace CodeBase.Enemy
 
         public void PlayAttack() => _animator.SetTrigger(Attack);
 
+        public void PlayHit() => _animator.SetTrigger(Hit);
+
         public void EnteredState(int stateHach)
         {
             State = StateFor(stateHach);

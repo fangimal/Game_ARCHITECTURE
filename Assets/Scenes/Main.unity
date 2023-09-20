@@ -1481,6 +1481,16 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5898299374830788509, guid: 274c4c35ed05ea14c87492064b3cadfd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898299374830788509, guid: 274c4c35ed05ea14c87492064b3cadfd,
+        type: 3}
+      propertyPath: AttackCooldown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6455524220641121681, guid: 274c4c35ed05ea14c87492064b3cadfd,
         type: 3}
       propertyPath: Cooldown

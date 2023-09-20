@@ -27,7 +27,7 @@ namespace CodeBase.Infrastructure.Factory
 
         }
 
-        public void CreateHub() => 
+        public GameObject CreateHud() => 
             InstantiateRegistered(AssetPath.HUDPath);
 
         public void Cleanup()
