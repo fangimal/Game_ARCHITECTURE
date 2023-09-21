@@ -21,7 +21,7 @@ namespace CodeBase.Infrastructure.States
         {
             LoadProgressOrInitNew();
             
-            _gameStateMachine.Enter<LoadLevelState, string>(_progressService.Plogress.WorldData.PositionOnLevel.Level);
+            _gameStateMachine.Enter<LoadSceneState, string>(_progressService.Plogress.WorldData.PositionOnLevel.Level);
         }
 
         public void Exit()
