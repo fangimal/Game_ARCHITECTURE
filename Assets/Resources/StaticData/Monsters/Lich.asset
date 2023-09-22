@@ -19,5 +19,5 @@ MonoBehaviour:
   MinLoot: 7
   Cleavage: 0.5
   EffectiveDistance: 0.5
-  MoveSpeed: 1
+  MoveSpeed: 3
   Prefab: {fileID: 3521790151343910317, guid: 6a81f88c4d113d04e91bf41f3aabf52d, type: 3}
