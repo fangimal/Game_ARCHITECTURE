@@ -4,6 +4,6 @@ namespace CodeBase.Infrastructure.Services.PersistentProgress
 {
     public class PersistentProgressService : IPersistentProgressService
     {
-        public PlayerProgress Plogress { get; set; }
+        public PlayerProgress Progress { get; set; }
     }
 }

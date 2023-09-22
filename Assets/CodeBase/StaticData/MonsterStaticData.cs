@@ -11,6 +11,9 @@ namespace CodeBase.StaticData
         
         [Range(1,30)]
         public int Damage;
+
+        public int MaxLoot;
+        public int MinLoot;
         
         [Range(0.5f,1f)]
         public float Cleavage = 0.5f;
@@ -19,7 +22,7 @@ namespace CodeBase.StaticData
         public float EffectiveDistance = 0.5f;
         
         [Range(0f, 10f)]
-        public float MoveSpeed = 1;
+        public float MoveSpeed = 3;
         
         public GameObject Prefab;
     }

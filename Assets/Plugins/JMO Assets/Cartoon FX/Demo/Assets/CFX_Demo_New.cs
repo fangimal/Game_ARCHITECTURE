@@ -178,7 +178,7 @@ public class CFX_Demo_New : MonoBehaviour
 			if (main.loop)
 			{
 				ps.gameObject.AddComponent<CFX_AutoStopLoopedEffect>();
-				ps.gameObject.AddComponent<CFX_AutoDestructShuriken>();
+				ps.gameObject.AddComponent<CFX_AutoDestruct>();
 			}
 		}
 #else

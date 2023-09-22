@@ -11,7 +11,7 @@ namespace CodeBase.Enemy
         public EnemyHealth Health;
         public EnemyAnimator Animator;
 
-        [FormerlySerializedAs("DeathGx")] public GameObject DeathFx;
+        public GameObject DeathFx;
 
         public event Action Happened;
 
