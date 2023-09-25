@@ -5,6 +5,7 @@ using CodeBase.Infrastructure.Services;
 using CodeBase.Infrastructure.Services.PersistentProgress;
 using CodeBase.Infrastructure.Services.Randomizer;
 using CodeBase.Logic;
+using CodeBase.Logic.EnemySpawners;
 using CodeBase.StaticData;
 using CodeBase.UI;
 using UnityEngine;
@@ -58,6 +59,16 @@ namespace CodeBase.Infrastructure.Factory
             lootPiece.Costruct(_persistentProgressService.Progress.WorldData);
             
             return lootPiece;
+        }
+
+        public void CreateSpawner(Vector3 at, string spawnerId, MonsterTypeId monsterTypeId)
+        {
+            var spawner = InstantiateRegistered(AssetPath.Spawner, at).
+                GetComponent<SpawnPoint>();
+            
+            spawner.Construct(this);
+            spawner.Id = spawnerId;
+            spawner.MonsterTypeId = monsterTypeId;
         }
 
         public GameObject CreateMonster(MonsterTypeId monsterTypeId, Transform parent)

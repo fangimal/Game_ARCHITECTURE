@@ -14,8 +14,8 @@ namespace CodeBase.Infrastructure.Factory
         List<ISavedProgressReader> ProgressReaders { get; }
         List<ISavedProgress> ProgressWriters { get; }
         void Cleanup();
-        void Register(ISavedProgressReader progressReader);
+        void CreateSpawner(Vector3 at, string spawnerId, MonsterTypeId monsterTypeId);
         GameObject CreateMonster(MonsterTypeId monsterTypeId, Transform parent);
         LootPiece CreateLoot();
-    }
+    }   
 }
