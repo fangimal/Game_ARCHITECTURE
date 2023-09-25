@@ -16,10 +16,10 @@ MonoBehaviour:
   EnemySpawners:
   - Id: Main_6278f74c-0f38-4735-baeb-0889ebbc5308
     MonsterTypeId: 10
-    Position: {x: 4.05, y: 0, z: -13.52}
+    Position: {x: -9.01, y: 0, z: -16.41}
   - Id: Main_2bef4e7a-d7cc-4ceb-bf20-5280b93beeca
     MonsterTypeId: 0
-    Position: {x: -13.73, y: 0, z: -13.52}
+    Position: {x: -13.73, y: 0, z: -8.66}
   - Id: Main_6b5b9380-9a91-45c1-af9b-0714359ecf58
     MonsterTypeId: 0
-    Position: {x: -6.08, y: 0, z: -13.52}
+    Position: {x: 2.07, y: 0, z: -12.83}
