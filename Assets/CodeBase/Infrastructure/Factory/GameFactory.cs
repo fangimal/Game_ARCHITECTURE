@@ -8,6 +8,8 @@ using CodeBase.Logic;
 using CodeBase.Logic.EnemySpawners;
 using CodeBase.StaticData;
 using CodeBase.UI;
+using CodeBase.UI.Elements;
+using CodeBase.UI.Services.Windows;
 using UnityEngine;
 using UnityEngine.AI;
 using Object = UnityEngine.Object;
@@ -20,6 +22,7 @@ namespace CodeBase.Infrastructure.Factory
         private readonly IStaticDataService _staticData;
         private readonly IRandomService _randomService;
         private readonly IPersistentProgressService _persistentProgressService;
+        private readonly IWindowService _windowService;
         public List<ISavedProgressReader> ProgressReaders { get; } = new List<ISavedProgressReader>();
         private GameObject HeroGameObject { get; set; }
         public List<ISavedProgress> ProgressWriters { get; } = new List<ISavedProgress>();
@@ -27,26 +30,28 @@ namespace CodeBase.Infrastructure.Factory
             IAssets assetses, 
             IStaticDataService staticData, 
             IRandomService randomService,
-            IPersistentProgressService persistentProgressService)
+            IPersistentProgressService persistentProgressService, IWindowService windowService)
         {
             _assetses = assetses;
             _staticData = staticData;
             _randomService = randomService;
             _persistentProgressService = persistentProgressService;
+            _windowService = windowService;
         }
 
         public GameObject CreateHero(GameObject at)
         {
             HeroGameObject = InstantiateRegistered(AssetPath.HeroPath, at.transform.position);
             return HeroGameObject;
-
         }
 
         public GameObject CreateHud()
         {
             GameObject hub = InstantiateRegistered(AssetPath.HUDPath);
-            
             hub.GetComponentInChildren<LootCounter>().Construct(_persistentProgressService.Progress.WorldData);
+
+            foreach (OpenWindowButton openWindowButton in hub.GetComponentsInChildren<OpenWindowButton>())
+                openWindowButton.Construct(_windowService);
             
             return hub;
         }
