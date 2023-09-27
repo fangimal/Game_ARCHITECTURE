@@ -8,9 +8,7 @@ namespace CodeBase.CameraLogic
         public float RotationAngleX;
         public int Distance;
         public float OffsetY;
-
-
-        [SerializeField]
+        
         private Transform _following;
 
         private void LateUpdate()
